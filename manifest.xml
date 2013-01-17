@@ -1,0 +1,28 @@
+<package>
+  <description brief="ros_arm_tutorial">
+
+     ros_arm_tutorial
+
+  </description>
+  <author>achu wilson</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ros_arm_tutorial</url>
+
+
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+   <depend package="std_msgs"/>
+  <depend package="kinematics_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="arm_kinematics"/>
+
+  <depend package="rviz"/>
+  <depend package="urdf"/>
+
+<depend package="tf"/>
+
+
+</package>
+
+
