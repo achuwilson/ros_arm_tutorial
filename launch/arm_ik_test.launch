@@ -1,0 +1,20 @@
+<launch>
+	<arg name="model" />
+	<arg name="gui" default="False" />
+	<param name="robot_description" command="$(find xacro)/xacro.py '$(find ros_arm_tutorial)/urdf/nine_dof.urdf'" />
+	    <param name="rate" value="0.001" />
+	<param name="use_gui" value="$(arg gui)"/>
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" ></node>
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+		    	<param name="publish_frequency" value="20.0"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_tutorial)/urdf.vcg" />
+
+	 <node name="test_arm_kinematics" pkg="arm_kinematics" type="arm_kinematics" output="screen">
+		<param name="root_name" value="base_actuator" />
+		<param name="tip_name" value="gripper_base" />
+		<param name="epsilon" value="0.001" />
+		<param name="maxIterations" value="1000" />
+	</node>
+	
+
+</launch>
